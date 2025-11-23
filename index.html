@@ -1,0 +1,82 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ReStyle Connect</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>ReStyle Connect</h1>
+    <p>Turn old clothes into new masterpieces — find designers by price & rating.</p>
+  </header>
+
+  <main>
+    <section class="left-col">
+      <div class="card">
+        <h2>Find Designers</h2>
+        <div class="controls">
+          <label>Sort:
+            <select id="sortSelect">
+              <option value="rating-desc">Rating ↓</option>
+              <option value="price-asc">Price ↑</option>
+              <option value="price-desc">Price ↓</option>
+            </select>
+          </label>
+          <label>Min rating:
+            <select id="minRating">
+              <option value="0">Any</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+            </select>
+          </label>
+          <label>Max price:
+            <input id="maxPrice" type="number" placeholder="No limit" min="0" />
+          </label>
+          <button id="resetFilters">Reset</button>
+        </div>
+        <ul id="designerList" class="designer-list"></ul>
+        <button id="openAddDesigner" class="primary">Add a Designer</button>
+      </div>
+
+      <div class="card small">
+        <h3>Quick Match</h3>
+        <label>Budget:
+          <input id="quickBudget" type="number" placeholder="e.g. 30" />
+        </label>
+        <button id="quickMatch">Show Top 3</button>
+        <ul id="quickMatches"></ul>
+      </div>
+
+      <div class="card small">
+        <h3>Before & After Gallery</h3>
+        <div id="gallery" class="gallery"></div>
+      </div>
+
+    </section>
+
+    <section class="right-col">
+      <div id="panelArea" class="card panel">
+        <h2>Welcome</h2>
+        <p>Select a designer to see profile, send a project, or manage orders.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Built with care • Data stays in your browser (localStorage)</small>
+  </footer>
+
+  <!-- Modal templates -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <button id="closeModal" class="close">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
